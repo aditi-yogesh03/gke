@@ -19,11 +19,7 @@ pipeline {
                         
                         # List all GKE clusters in the project
                         gcloud container clusters list
-                        gcloud container clusters get-credentials my-gke-cluster --zone us-central1-a
-
-                        # Apply Kubernetes manifests
-                        kubectl apply -f deployment.yml
-                        kubectl apply -f LoadBalancer-service.yml
+                        gcloud container clusters get-credentials my-cluster --zone us-central1-a
 
                         # Verify deployment
                         kubectl get pods -o wide
