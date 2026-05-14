@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy
+  labels:
+    app: nginx-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-deploy
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy
+    spec:
+      containers:
+      - name: myimage
+        image: us-central1-docker.pkg.dev/devopslearning-496304/my-repo/flask-hello 
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 50m
+            
