@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-        stage('List GKE Nodes') {
+        stage('List GKE Nodes below') {
             steps {
                 sh '''
                     export USE_GKE_GCLOUD_AUTH_PLUGIN=True
